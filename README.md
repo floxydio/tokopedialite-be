@@ -10,7 +10,7 @@ Nodemon -> [Click Here](https://www.npmjs.com/package/nodemon)
 ##### To Running -> "npm run dev"
 
 **Folder Structure** <br> <br> <br>
-` node_modules/ * For Modules Node <br>
+node_modules/ * For Modules Node <br>
  database/ *For Database Connection <b>
  controllers/ * For Controller API & Query <br>
- app.js *Core File`
+ app.js *Core File
