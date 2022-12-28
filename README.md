@@ -5,12 +5,12 @@ MySQL -> [Click Here](https://github.com/mysqljs/mysql) <br>
 Nodemon -> [Click Here](https://www.npmjs.com/package/nodemon)
 <br>
 
-##### Server Running on : 2500
+##### Server Running on : 2500 <br> <br> <br>
 
-##### To Running -> "npm run dev"
+##### To Running -> "npm run dev" <br> <br> <br>
 
 **Folder Structure** <br> <br> <br>
 node_modules/ * For Modules Node <br>
- database/ *For Database Connection <b>
- controllers/ * For Controller API & Query <br>
- app.js *Core File
+database/ *For Database Connection <b>
+controllers/ * For Controller API & Query <br>
+app.js *Core File
