@@ -1,10 +1,11 @@
-const express = require("express");
+const express = require('express');
+const connectDatabase = require('./database/db');
 const app = express();
 const port = 2500;
 const categoryController = require("./controller/category")
 
-app.get("/", function (req, res) {
-  res.send("Implement Me");
+app.get('/', function (req, res) {
+  res.send('Implement Me');
 });
 
 app.get("/category", categoryController.categoryGET)
