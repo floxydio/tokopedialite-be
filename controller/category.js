@@ -13,7 +13,6 @@ function categoryGET(req,res) {
       })
     }
   })
-
 }
 
 

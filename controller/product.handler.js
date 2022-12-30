@@ -1,4 +1,3 @@
-const e = require('express');
 const connectDatabase = require('../database/db');
 
 function productGET(callback) {
@@ -30,6 +29,24 @@ function productGetController(req, res) {
   });
 }
 
+function productSearching (req, res) {
+  console.log(req.params.search)
+  connectDatabase.connection.query(`SELECT * FROM product WHERE nama LIKE '%${req.params.search}%'`,
+  function (err, result){
+    console.log(result)
+    if (err) {
+      return res.status(400).send({
+        message : err
+      })
+    } else {
+      return res.status(200).send({
+        data : result,
+        message : "Data Search",
+      })
+    }
+  })
+}
 module.exports = {
   productGetController,
+  productSearching,
 };

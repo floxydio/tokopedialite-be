@@ -9,6 +9,7 @@ app.get('/', function (req, res) {
   res.send('Implement Me');
 });
 
+app.get('/product/search/:search', productController.productSearching);
 app.get('/product', productController.productGetController);
 app.get('/api/category', categoryController.categoryGET);
 
