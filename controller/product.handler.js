@@ -37,6 +37,7 @@ function productPOST(req, res) {
   );
 }
 
+
 function productSearchingById(req, res) {
   connectDatabase.connection.query(
     `SELECT * FROM product ORDER BY id ASC`,
