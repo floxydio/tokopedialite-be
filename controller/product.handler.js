@@ -21,7 +21,7 @@ function productGET(req, res) {
 
 function productGETSpecific(req, res) {
   connectDatabase.connection.query(
-    `SELECT product.nama, product.harga, kategori.nama FROM product LEFT JOIN kategori on product.kategori = kategori.id`,
+    `SELECT product.nama, product.harga, kategori.nama as kategori FROM product LEFT JOIN kategori on product.kategori = kategori.id`,
     function (err, result) {
       if (err) {
         res.status(400).send({
