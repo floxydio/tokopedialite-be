@@ -19,11 +19,12 @@ app.get('/', function (req, res) {
   res.send('Implement Me');
 });
 
-app.get('/product/search/:search', productController.productSearching);
-app.get('/api-product', productController.productGET);
+app.get('/api/product/search/:search', productController.productSearchingName);
+app.get('/api/product', productController.productGET);
 app.get('/api/category', categoryController.categoryGET);
+app.get('/api/product/:id', productController.productSearchingById);
 
-app.post('/api-create-product', productController.productPOST);
+app.post('/product/create-product', productController.productPOST);
 
 app.listen(port, function () {
   console.log(`Server Running ON --> ${port}`);
