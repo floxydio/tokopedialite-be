@@ -39,7 +39,7 @@ function productPOST(req, res) {
 
 function productSearchingById(req, res) {
   connectDatabase.connection.query(
-    `SELECT * FROM product WHERE id = ${req.params.id}`,
+    `SELECT * FROM product ORDER BY id ASC`,
     function (err, result) {
       if (err) {
         res.status(400).send({
