@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
   res.send('Implement Me');
 });
 
-app.get('/promo', productController.productGetController);
+app.get('/product', productController.productGetController);
 app.get('/api/category', categoryController.categoryGET);
 
 app.listen(port, function () {
