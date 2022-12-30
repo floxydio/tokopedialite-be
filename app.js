@@ -1,6 +1,7 @@
 const express = require('express');
 const connectDatabase = require('./database/db');
 const productController = require('./controller/product.handler');
+const promoController = require('./controller/promo.handler');
 const app = express();
 const port = 2500;
 const categoryController = require('./controller/category');
@@ -22,6 +23,7 @@ app.get('/', function (req, res) {
 app.get('/api/product/search/:search', productController.productSearchingName);
 app.get('/api/product', productController.productGET);
 app.get('/api/category', categoryController.categoryGET);
+app.get('/api/promo', promoController.promoGET);
 app.get('/api/product/:id', productController.productSearchingById);
 
 app.post('/product/create-product', productController.productPOST);
