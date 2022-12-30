@@ -27,8 +27,8 @@ app.get('/api/promo', promoController.promoGET);
 app.get('/api/product/sort', productController.productSearchingById);
 app.get('/api/product/price', productController.productGETSpecific);
 
-app.post('/product/create-product', productController.productPOST);
-app.post('/promo', promoController.promoPOST);
+app.post('/api/product/add-product', productController.productPOST);
+app.post('/api/promo/add-promo', promoController.promoPOST);
 
 app.listen(port, function () {
   console.log(`Server Running ON --> ${port}`);
