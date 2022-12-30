@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
 app.get('/api/product/search/:search', productController.productSearchingName);
 app.get('/api/product', productController.productGET);
 app.get('/api/category', categoryController.categoryGET);
-app.get('/api/product/:id', productController.productSearchingById);
+app.get('/api/product/sort', productController.productSearchingById);
 
 app.post('/product/create-product', productController.productPOST);
 
