@@ -1,35 +1,43 @@
-const e = require('express');
 const connectDatabase = require('../database/db');
 
-function productGET(callback) {
+function productGET(req, res) {
   connectDatabase.connection.query(
-    'SELECT * FROM product',
+    `SELECT * FROM product`,
     function (err, result) {
       if (err) {
-        callback(err, null);
+        res.status(400).send({
+          message: 'Something Went Wrong',
+        });
       } else {
-        callback(null, result);
+        res.status(200).send({
+          status: 200,
+          data: result,
+          message: 'Successfully GET Product',
+        });
       }
     }
   );
 }
 
-function productGetController(req, res) {
-  productGET(function (err, result) {
-    if (err) {
-      res.status(400).send({
-        message: 'Something Went Wrong',
-      });
-    } else {
-      res.status(200).send({
-        status: 200,
-        data: result,
-        message: 'Successfully GET data Product',
-      });
+function productPOST(req, res) {
+  connectDatabase.connection.query(
+    `INSERT INTO product (gambar, nama, harga, penjual, lokasi_penjual, rating, kategori) 
+    VALUES ('${req.body.gambar}', '${req.body.nama}', '${req.body.harga}', '${req.body.penjual}', '${req.body.lokasi_penjual}', '${req.body.rating}', '${req.body.kategori}')`,
+    function (err, result) {
+      if (err) {
+        res.status(400).send({
+          message: err,
+        });
+      } else {
+        res.status(201).send({
+          message: 'Successfully Add Product',
+        });
+      }
     }
-  });
+  );
 }
 
 module.exports = {
-  productGetController,
+  productGET,
+  productPOST,
 };
