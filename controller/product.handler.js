@@ -19,6 +19,25 @@ function productGET(req, res) {
   );
 }
 
+function productGETSpecific(req, res) {
+  connectDatabase.connection.query(
+    `SELECT product.nama, product.harga, kategori.nama as kategori FROM product LEFT JOIN kategori on product.kategori = kategori.id`,
+    function (err, result) {
+      if (err) {
+        res.status(400).send({
+          message: 'Something Went Wrong',
+        });
+      } else {
+        res.status(200).send({
+          status: 200,
+          data: result,
+          messaage: 'Successfully Get Data',
+        });
+      }
+    }
+  );
+}
+
 function productPOST(req, res) {
   connectDatabase.connection.query(
     `INSERT INTO product (gambar, nama, harga, penjual, lokasi_penjual, rating, kategori) 
@@ -80,4 +99,5 @@ module.exports = {
   productSearchingById,
   productGET,
   productPOST,
+  productGETSpecific,
 };

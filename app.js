@@ -24,8 +24,8 @@ app.get('/api/product/search/:search', productController.productSearchingName);
 app.get('/api/product', productController.productGET);
 app.get('/api/category', categoryController.categoryGET);
 app.get('/api/promo', promoController.promoGET);
-app.get('/api/product/:id', productController.productSearchingById);
 app.get('/api/product/sort', productController.productSearchingById);
+app.get('/api/product/price', productController.productGETSpecific);
 
 app.post('/product/create-product', productController.productPOST);
 app.post('/promo', promoController.promoPOST);
